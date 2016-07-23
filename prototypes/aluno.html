@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Início</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+     <script src="jquery/jquery-1.11.3.min.js"></script>
+  </head>
+  <body class="body-layout">
+      <div class="jumbotron">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	          Nome do aluno
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+					<form class="form-horizontal" method="POST" action="salvar">
+					<img src="img.png" alt="fotoAluno" class="img-thumbnail">
+				  <div class="form-group">
+				    <label for="conselho" class="col-sm-2 control-label">Conselho: </label>
+				    <div class="col-sm-5">
+							<select class="form-control" id="conselho" name="conselho">
+								<option value="diagnostica">Diagnóstica</option>
+							</select>
+				    </div>
+				  </div>
+				   <div class="form-group">
+				    <label for="comentario" class="col-sm-2 control-label">Comentário: </label>
+				    <div class="col-sm-5">
+							<textarea rows="4" cols="40" class="form-control" id="nome" name="nome"></textarea>
+				    </div>
+				  </div>
+				   <div class="form-group">
+				    <label for="caracteristica" class="col-sm-2 control-label">Características (Ver mais): </label>
+				    <div class="col-sm-5">
+				    <br>
+							<input type="checkbox" name="social"> Social
+							<input type="checkbox" name="psico"> Psico-pedagógico
+							<input type="checkbox" name="cognitivo"> Cognitivo
+				    </div>
+				  </div>
+				    <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button type="submit" class="col-md-1 btn btn-primary">Salvar</button>
+					    </div>
+					  </div>
+				</form>
+	      </div>
+	    </div>
+	  </div>
+	  		<hr>
+	  <div id="tabela1">
+	    <table class="table">
+	    		<tr>
+						<th>Estado</th>
+						<th>Disciplina</th>
+						<th>Email</th>
+						<th>Último acesso</th>
+						<th>Ações</th>	    		
+	    		</tr>
+	    		<tr>
+						<td>admin</td>
+						<td>Administrador</td>
+						<td>adnim@administracao.com</td>
+						<td>23/07/2015</td>
+						<td><button class="btn btn-info" action="acao"><span class="glyphicon glyphicon-pencil"></span></button>
+								 <button class="btn btn-danger" action="acao"><span class="glyphicon glyphicon-trash"></span></button>						
+						</td>    		
+	    		</tr>
+	    		<tr>
+						<td>brenotiso</td>
+						<td>Breno</td>
+						<td>breno@administracao.com</td>
+						<td>23/07/2015</td>
+						<td><button class="btn btn-info" action="acao"><span class="glyphicon glyphicon-pencil"></span></button>
+								 <button class="btn btn-danger" action="acao"><span class="glyphicon glyphicon-trash"></span></button>						
+						</td>		
+	    		</tr>
+	    </table>
+	   </div> 
+      </div>
+    </div>
+    <footer>
+    	<hr>
+		<p>Desenvolvido por CEFET/MG Unidade Varginha - Departamento de Computação e Engenharia Civil. 2015.</p>    
+    </footer>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
