@@ -5,3 +5,8 @@ bower_components/
 tmp
 .DS_Store
 .idea
+typings
+app/**/*.js
+app/**/*.map
+jspm_packages
+
