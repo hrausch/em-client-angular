@@ -4,6 +4,12 @@ body {
   background-color: #eee;
 }
 
+#chartdiv {
+	width		: 100%;
+	height		: 500px;
+	font-size	: 11px;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;

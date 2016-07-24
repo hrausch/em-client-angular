@@ -1,6 +1,7 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import {UsersComponent} from "./users/users.component";
 import {MainComponent} from "./main.component";
+import {DashboardCourseComponent} from "./dashboards/dashboard-course.component";
 
 const routes: RouterConfig = [
     {
@@ -11,6 +12,11 @@ const routes: RouterConfig = [
     {
         path: 'users',
         component: UsersComponent
+    },
+
+    {
+        path: 'coursedashboard',
+        component: DashboardCourseComponent
     }
 ];
 
