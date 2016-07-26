@@ -10,8 +10,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DashboardCourseService {
 
-    // private baseUrl = 'http://localhost:8080/dashboard/lostgrades';  // URL to web api
-    private baseUrl = 'app/dashboards/lostgrades.json';
+    private baseUrl = 'http://localhost:8080/dashboard/lostgrades';  // URL to web api
+    //private baseUrl = 'app/dashboards/lostgrades.json';
 
     constructor(private http: Http) {
 
