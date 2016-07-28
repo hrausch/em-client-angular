@@ -71,7 +71,7 @@ export class DashboardCourseComponent implements OnInit {
             '} ], ' +
            ' \"startDuration\": 2,  ' +
            ' \"graphs\": [ { ' +
-            '    \"balloonText\": \"[[value]] litres of beer per year\", ' +
+            '    \"balloonText\": \"[[value]] médias perdidas\", ' +
             '    \"bullet\": \"round\", ' +
            '     \"valueField\": \"lostAverages\" ' +
            ' } ], ' +
