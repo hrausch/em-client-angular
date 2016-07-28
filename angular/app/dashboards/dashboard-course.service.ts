@@ -4,29 +4,37 @@
 import { Injectable }    from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {GenericService} from "../generic.service";
 
 
 
 @Injectable()
 export class DashboardCourseService {
 
-    private baseUrl = 'http://herbertrausch.ddns.net:8080/dashboard/lostgrades';  // URL to web api
     //private baseUrl = 'app/dashboards/lostgrades.json';
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private _appGlobals: GenericService) {
 
     }
 
-    getLostGrades() {
+    getLostGradesByClass() {
 
-        return this.http.get(this.baseUrl).map((res:Response) => res.json());
+        let url = this._appGlobals.getBaseUrl() + "dashboard/lostgrades";
+        return this.http.get(url).map((res:Response) => res.json());
 
     }
 
+    getAveragesGradesByClass() {
 
-    private handleError(error: any) {
+        let url = this._appGlobals.getBaseUrl() + "dashboard/averagesgrades";
+        return this.http.get(url).map((res:Response) => res.json());
+
+    }
+
+    protected handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
+
 
 }

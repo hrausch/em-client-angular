@@ -3,8 +3,45 @@
 
     <div class="error" *ngIf="error">{{error}}</div>
 
+    <div class="row">
 
-    <div chart id="chartdiv"></div>
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-reorder fa-fw"></i> NOTA MÉDIA DA TURMAR POR DISCIPLINA/ETAPA
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="chartdiv" id="chartbar"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-reorder fa-fw"></i> NÚMERO DE ALUNOS QUE PERDERAM MÉDIA/DISCIPLINA (ACUMULADO DO ANO)
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="chartdiv" id="chartradar"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
 
 </div>
 
