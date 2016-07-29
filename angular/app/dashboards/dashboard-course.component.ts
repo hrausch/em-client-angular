@@ -6,6 +6,8 @@ import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {CourseAverage} from "./DashBoard";
 import {DashboardCourseService} from "./dashboard-course.service";
+import {StudentSummary} from "../student/student";
+import {StudentService} from "../student/student.service";
 
 /// <reference path="AmCharts.d.ts" />
 
@@ -16,6 +18,7 @@ const url = 'app/dashboards/radarChart.js';
     templateUrl: 'app/dashboards/dashboard-course.component.html',
     providers: [
         DashboardCourseService,
+        StudentService
     ]
 
 })
@@ -24,7 +27,7 @@ export class DashboardCourseComponent implements OnInit {
 
     classLost: any;
     classAverages: any;
-
+    studentSummary: StudentSummary[];
     error: any;
 
 
@@ -32,7 +35,8 @@ export class DashboardCourseComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private services: DashboardCourseService) { }
+        private services: DashboardCourseService,
+        private serviceStudent: StudentService) { }
 
     ngOnInit() {
 
@@ -41,6 +45,7 @@ export class DashboardCourseComponent implements OnInit {
          this.loadAPI = new Promise((resolve) => {
              this.getLostGrades();
              this.getAverageGrades();
+             this.getStudentSummary();
          });
 
 
@@ -67,6 +72,18 @@ export class DashboardCourseComponent implements OnInit {
             );
 
     }
+
+    getStudentSummary(){
+        this.serviceStudent
+            .getStudentSummary()
+            .subscribe(
+                data => { this.studentSummary = data; },
+                err => { this.error = true }
+
+            );
+    }
+
+
 
     public loadBarChart(){
 

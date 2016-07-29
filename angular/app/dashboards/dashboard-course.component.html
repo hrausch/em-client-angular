@@ -24,7 +24,7 @@
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-6">
 
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -34,6 +34,54 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="chartdiv" id="chartradar"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-reorder fa-fw"></i> SUMÁRIO DOS ALUNOS NO ANO
+
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div id="tabela1">
+                        <table class="table">
+                            <tr>
+                                <th>ESTADO</th>
+                                <th>FOTO</th>
+                                <th>NOME</th>
+                                <th>MÉDIAS PERDIDAS</th>
+                                <th>MENOR NOTA</th>
+                                <th>OUTROS</th>
+                            </tr>
+
+                            <tr *ngFor="let stusum of studentSummary" >
+                                <td>
+                                    <div [ngSwitch]=stusum.alertaSinal>
+                                        <template [ngSwitchCase]="0"> <img class="imgSinal" src="./static/img/sinal_vermelho.png" /></template>
+                                        <template [ngSwitchCase]="1"><img class="imgSinal" src="./static/img/sinal_amarelo.png" /></template>
+                                        <template ngSwitchDefault> <img class="imgSinal" src="./static/img/sinal_verde.png" /></template>
+                                    </div>
+
+                                </td>
+                                <td><img src="./static/img/fotos_aluno/{{stusum.student.foto}}" style="height: 47px; width: 35px" /></td>
+                                <td>{{stusum.student.nome}}</td>
+                                <td>{{stusum.numeroMediasPerdida}}</td>
+                                <td>{{stusum.menorNotaBimestre}}</td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                    </div>
                 </div>
 
 
